@@ -1,0 +1,28 @@
+#!/usr/bin/bash -x
+
+git clone git@github.com:lis78/project.git
+
+sudo su
+read password
+
+sudo cp /home/aleksander/project/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
+sudo cp /home/aleksander/project/kibana.yml /etc/kibana/kibana.yml
+sudo cp /home/aleksander/project/logstash.yml /etc/logstash/logstash.yml
+sudo cp /home/aleksander/project/filebeat.yml /etc/filebeat/filebeat.yml
+sudo cp /home/aleksander/project/prometheus.yml /etc/prometheus/prometheus.yml
+
+systemctl restart elasticsearch
+systemctl status elasticsearch
+
+systemctl restart kibana
+syatemctl status kibana
+
+systemctl restart logstash
+systemctl status logstash
+
+systemctl restart filebeat
+systemctl status filebeat
+
+systemctl restart prometheus
+systemctl status prometheus
+

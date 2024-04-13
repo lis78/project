@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git clone git@github.com:lis78/project.git
+
+sudo su
+read password
+
+sudo cp /home/aleksander/project/slave.conf /etc/mysql/mysql.conf.d/mysqld.cnf
+
+systemctl restart mysql
+systemctl status mysql
